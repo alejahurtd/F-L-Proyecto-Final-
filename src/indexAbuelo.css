@@ -1,0 +1,9 @@
+.container-post {
+	display: flex;
+	align-items: center;
+	width: 50%;
+	border-radius: 20px;
+	background: #2f60e9;
+	margin: 1%;
+	padding: 2rem;
+}
