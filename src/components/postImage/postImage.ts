@@ -1,4 +1,8 @@
 import postStyles from './postImage.css';
+
+// Empieza nuestro "diccionario" para los nombres de los atributos HTML que el componente puede recibir. Recomendación de Anne,
+// es mejor manejarlos sin mayusculas, (apesar que en la data esten con mayusculas) porque aveces ts no las lee y marca error
+
 export enum Attribute {
 	'image' = 'image',
 	'isliked' = 'isliked',
@@ -8,6 +12,8 @@ export enum Attribute {
 	'description' = 'description',
 }
 
+// Recordar que los ? frente a la propiedad es porque es opcional
+
 class PostImage extends HTMLElement {
 	image?: string;
 	isliked?: string;
@@ -16,10 +22,15 @@ class PostImage extends HTMLElement {
 	username?: string;
 	description?: string;
 
+	// iniciamos nuestro componente
+
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
 	}
+
+	// El método observedAttributes le dice al navegador qué información de mi componente debe mantener bajo vigilancia
+	// Si alguno de los detalles cambia, el navegador lo notará y podrá actuar en consecuencia. Es decir, es nuestra lista de chequeo
 
 	static get observedAttributes() {
 		const attrs: Record<Attribute, null> = {
@@ -32,6 +43,9 @@ class PostImage extends HTMLElement {
 		};
 		return Object.keys(attrs);
 	}
+
+	// El metodo attributeChanged... se activa cada vez que cambia uno de los atributos de observedAttributes
+
 	attributeChangedCallback(propName: Attribute, oldValue: string | undefined, newValue: string | undefined) {
 		switch (propName) {
 			default:
@@ -47,8 +61,10 @@ class PostImage extends HTMLElement {
 
 	render() {
 		if (this.shadowRoot) {
-			// Limpiar el contenido existente en el shadowRoot
+			// Limpiar el contenido existente en el shadowRoot, para que no se duplique el contenido
 			this.shadowRoot.innerHTML = '';
+
+			// creamos nuestro css para solo el componente.
 
 			const css = this.ownerDocument.createElement('style');
 			css.textContent = `
@@ -124,9 +140,11 @@ class PostImage extends HTMLElement {
 			font-weight: normal;
 		}
 
-            `;
+    `;
 
-			this.shadowRoot.appendChild(css);
+			this.shadowRoot.appendChild(css); // añade el elemento de estilo al Shadow DOM del postImage.
+
+			//esctrcutura de nuestro componente
 
 			this.shadowRoot.innerHTML += `
 						 <style> ${postStyles}</style>

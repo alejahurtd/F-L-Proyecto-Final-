@@ -1,4 +1,4 @@
-// definimos la forma de los objetos
+// definimos la forma de los objetos, interface es nuestra plantilla
 
 interface DataPost {
 	image: string;
