@@ -1,3 +1,5 @@
+// definimos la forma de los objetos
+
 interface DataPost {
 	image: string;
 	isLiked: string;
@@ -7,8 +9,12 @@ interface DataPost {
 	description: string;
 }
 
+// importamos los iconos de la carpeta assets, para solo llamarlos en la data
+
 import heartIcon from '../../assets/heart icon.png';
 import saveIcon from '../../assets/save icon.png';
+
+// Nuestra data
 
 const dataPostImage: DataPost[] = [
 	{
@@ -45,5 +51,7 @@ const dataPostImage: DataPost[] = [
 		description: 'Mastering the ropes',
 	},
 ];
+
+// exportamos nuestra data
 
 export default dataPostImage;
