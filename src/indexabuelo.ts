@@ -1,10 +1,16 @@
 import abueloStyles from './indexAbuelo.css';
+
 import './components/exportPapa';
+
 import dataPostImage from './components/postImage/dataPostImage';
-import PostImage, { Attribute } from './components/postImage/postImage';
+import PostImage, { Attribute as PostImageAttribute } from './components/postImage/postImage';
+
+import dataPostTweet from './components/postTweet/dataPostTweet';
+import PostTweet, { Attribute as PostTweetAttribute } from './components/postTweet/postTweet';
 
 class AppContainer extends HTMLElement {
 	PostImageList: PostImage[] = [];
+	PostTweetList: PostTweet[] = [];
 
 	constructor() {
 		super();
@@ -16,16 +22,31 @@ class AppContainer extends HTMLElement {
 			const PostImageCard = this.ownerDocument.createElement('post-image') as PostImage;
 
 			// creamos nuestra tarjeta con la info especifica que necesita mostrar
-			PostImageCard.setAttribute(Attribute.image, data.image);
-			PostImageCard.setAttribute(Attribute.isliked, data.isLiked);
-			PostImageCard.setAttribute(Attribute.issaved, data.isSaved);
-			PostImageCard.setAttribute(Attribute.likescount, data.likesCount);
-			PostImageCard.setAttribute(Attribute.username, data.username);
-			PostImageCard.setAttribute(Attribute.description, data.description);
+			PostImageCard.setAttribute(PostImageAttribute.image, data.image);
+			PostImageCard.setAttribute(PostImageAttribute.isliked, data.isLiked);
+			PostImageCard.setAttribute(PostImageAttribute.issaved, data.isSaved);
+			PostImageCard.setAttribute(PostImageAttribute.likescount, data.likesCount);
+			PostImageCard.setAttribute(PostImageAttribute.username, data.username);
+			PostImageCard.setAttribute(PostImageAttribute.description, data.description);
 
 			// Añade el elemento PostImage a la lista PostImageList
 			this.PostImageList.push(PostImageCard);
 			console.log('list', this.PostImageList);
+		});
+
+		dataPostTweet.forEach((data) => {
+			//Bucle que recorre cada elemento en dataPostImage
+
+			const PostTweetCard = this.ownerDocument.createElement('post-tweet') as PostTweet;
+
+			// creamos nuestra tarjeta con la info especifica que necesita mostrar
+			PostTweetCard.setAttribute(PostTweetAttribute.image, data.image);
+			PostTweetCard.setAttribute(PostTweetAttribute.description, data.description);
+			PostTweetCard.setAttribute(PostTweetAttribute.username, data.username);
+
+			// Añade el elemento PostTweet a la lista PostTweetList
+			this.PostTweetList.push(PostTweetCard);
+			console.log('list', this.PostTweetList);
 		});
 	}
 
@@ -47,6 +68,13 @@ class AppContainer extends HTMLElement {
 			PostImageCards.appendChild(PostImageCard);
 		});
 		this.shadowRoot?.appendChild(PostImageCards);
+
+		const PostTweetCards = this.ownerDocument.createElement('div');
+		PostTweetCards.className = 'container-tweet';
+		this.PostTweetList.forEach((PostTweetCard) => {
+			PostTweetCards.appendChild(PostTweetCard);
+		});
+		this.shadowRoot?.appendChild(PostTweetCards);
 	}
 }
 
