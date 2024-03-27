@@ -11,13 +11,19 @@ class AppContainer extends HTMLElement {
 		this.attachShadow({ mode: 'open' });
 
 		dataPostImage.forEach((data) => {
+			//Bucle que recorre cada elemento en dataPostImage
+
 			const PostImageCard = this.ownerDocument.createElement('post-image') as PostImage;
+
+			// creamos nuestra tarjeta con la info especifica que necesita mostrar
 			PostImageCard.setAttribute(Attribute.image, data.image);
 			PostImageCard.setAttribute(Attribute.isliked, data.isLiked);
 			PostImageCard.setAttribute(Attribute.issaved, data.isSaved);
 			PostImageCard.setAttribute(Attribute.likescount, data.likesCount);
 			PostImageCard.setAttribute(Attribute.username, data.username);
 			PostImageCard.setAttribute(Attribute.description, data.description);
+
+			// Añade el elemento PostImage a la lista PostImageList
 			this.PostImageList.push(PostImageCard);
 			console.log('list', this.PostImageList);
 		});
@@ -45,29 +51,3 @@ class AppContainer extends HTMLElement {
 }
 
 customElements.define('app-container', AppContainer);
-
-// class AppContainer extends HTMLElement {
-// 	constructor() {
-// 		super();
-// 		this.attachShadow({ mode: 'open' });
-// 	}
-
-// 	connectedCallback() {
-// 		if (!this.shadowRoot) return;
-// 		this.shadowRoot.innerHTML = `<h1>Hola, esta es la página principal</h1>`;
-
-// 		dataPostImage.forEach((item) => {
-// 			const postImageElement = document.createElement('post-image');
-// 			postImageElement.setAttribute('image', item.image);
-// 			postImageElement.setAttribute('isLiked', item.isLiked);
-// 			postImageElement.setAttribute('isSaved', item.isSaved);
-// 			postImageElement.setAttribute('likesCount', item.likesCount);
-// 			postImageElement.setAttribute('username', item.username);
-// 			postImageElement.setAttribute('description', item.description);
-
-// 			this.shadowRoot!.appendChild(postImageElement);
-// 		});
-// 	}
-// }
-
-// customElements.define('app-container', AppContainer);
