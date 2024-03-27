@@ -13,12 +13,13 @@ class AppContainer extends HTMLElement {
 		dataPostImage.forEach((data) => {
 			const PostImageCard = this.ownerDocument.createElement('post-image') as PostImage;
 			PostImageCard.setAttribute(Attribute.image, data.image);
-			PostImageCard.setAttribute(Attribute.isLiked, data.isLiked);
-			PostImageCard.setAttribute(Attribute.isSaved, data.isSaved);
-			PostImageCard.setAttribute(Attribute.likesCount, data.likesCount);
+			PostImageCard.setAttribute(Attribute.isliked, data.isLiked);
+			PostImageCard.setAttribute(Attribute.issaved, data.isSaved);
+			PostImageCard.setAttribute(Attribute.likescount, data.likesCount);
 			PostImageCard.setAttribute(Attribute.username, data.username);
 			PostImageCard.setAttribute(Attribute.description, data.description);
 			this.PostImageList.push(PostImageCard);
+			console.log('list', this.PostImageList);
 		});
 	}
 

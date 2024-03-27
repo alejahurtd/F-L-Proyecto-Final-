@@ -1,28 +1,44 @@
 import postStyles from './postImage.css';
-
 export enum Attribute {
-	image = 'image',
-	isLiked = 'isLiked',
-	isSaved = 'isSaved',
-	likesCount = 'likesCount',
-	username = 'username',
-	description = 'description',
+	'image' = 'image',
+	'isliked' = 'isliked',
+	'issaved' = 'issaved',
+	'likescount' = 'likescount',
+	'username' = 'username',
+	'description' = 'description',
 }
 
 class PostImage extends HTMLElement {
+	image?: string;
+	isliked?: string;
+	issaved?: string;
+	likescount?: string;
+	username?: string;
+	description?: string;
+
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
 	}
 
 	static get observedAttributes() {
-		return Object.values(Attribute);
+		const attrs: Record<Attribute, null> = {
+			image: null,
+			isliked: null,
+			issaved: null,
+			likescount: null,
+			username: null,
+			description: null,
+		};
+		return Object.keys(attrs);
 	}
-
-	attributeChangedCallback(name: string, oldValue: string | null, newValue: string | null) {
-		if (oldValue !== newValue) {
-			this.render();
+	attributeChangedCallback(propName: Attribute, oldValue: string | undefined, newValue: string | undefined) {
+		switch (propName) {
+			default:
+				this[propName] = newValue;
+				break;
 		}
+		this.render();
 	}
 
 	connectedCallback() {
@@ -30,18 +46,14 @@ class PostImage extends HTMLElement {
 	}
 
 	render() {
-		if (!this.shadowRoot) return;
+		if (this.shadowRoot) {
+			// Limpiar el contenido existente en el shadowRoot
+			this.shadowRoot.innerHTML = '';
 
-		const image = this.getAttribute(Attribute.image) || '';
-		const isLiked = this.getAttribute(Attribute.isLiked) || '';
-		const isSaved = this.getAttribute(Attribute.isSaved) || '';
-		const likesCount = this.getAttribute(Attribute.likesCount) || '';
-		const username = this.getAttribute(Attribute.username) || '';
-		const description = this.getAttribute(Attribute.description) || '';
-		const css = this.ownerDocument.createElement('style');
-		css.textContent = `
+			const css = this.ownerDocument.createElement('style');
+			css.textContent = `
 
-		.container {
+			.container {
 				display: flex;
 				flex-direction: column;
 				align-items: center;
@@ -111,30 +123,34 @@ class PostImage extends HTMLElement {
 			color: white;
 			font-weight: normal;
 		}
-`;
-		this.shadowRoot.appendChild(css);
 
-		this.shadowRoot.innerHTML += `
+            `;
+
+			this.shadowRoot.appendChild(css);
+
+			this.shadowRoot.innerHTML += `
 						 <style> ${postStyles}</style>
+
             <section class="container">
 								<div class= "img-container">
-										<img class= "img-post" src="${image}" alt="Post image">
+										<img class= "img-post" src="${this.image}" alt="Post image">
 								</div>
 								 <div class= "content-container">
 								 		<div class= "icon-container">
-											<img class= "icon-container img" src="${isLiked}" alt="Like icon">
-											<img class= "icon-container img" src="${isSaved}" alt="Save icon">
+											<img class= "icon-container img" src="${this.isliked}" alt="Like icon">
+											<img class= "icon-container img" src="${this.issaved}" alt="Save icon">
 								 </div>
 
-                    <h3 class= "likes-count">${likesCount} likes</h3>
+                    <h3 class= "likes-count">${this.likescount} likes</h3>
 										<p
-											<span class= "username" >${username} </span>: <span class= "description"> ${description}</span>
+											<span class= "username" >${this.username} </span>: <span class= "description"> ${this.description}</span>
 											</p>
 
 						</div>
 
             </section>
         `;
+		}
 	}
 }
 
