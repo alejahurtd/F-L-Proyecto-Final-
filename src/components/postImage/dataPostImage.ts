@@ -12,36 +12,37 @@ import saveIcon from '../../assets/save icon.png';
 
 const dataPostImage: DataPost[] = [
 	{
-		image: 'https://images.unsplash.com/photo-1568454537842-d933259bb258',
+		image:
+			'https://images.pexels.com/photos/11000413/pexels-photo-11000413.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load',
 		isLiked: heartIcon,
 		isSaved: saveIcon,
 		likesCount: '950',
-		username: '@val0931',
-		description: 'I gave it all',
+		username: '@guti_santi',
+		description: 'Ready for the next marathons',
 	},
 	{
-		image: 'https://images.unsplash.com/photo-1568454537842-d933259bb258',
+		image: 'https://i.pinimg.com/564x/8d/e2/53/8de253777f0974e37f142cadb822593b.jpg',
 		isLiked: heartIcon,
 		isSaved: saveIcon,
 		likesCount: '590',
 		username: '@alejah__',
-		description: 'Sweat today, smile tomorrow',
+		description: 'Exercise: self-love in motion',
 	},
 	{
-		image: 'https://images.unsplash.com/photo-1568454537842-d933259bb258',
+		image: 'https://i.pinimg.com/564x/73/b2/cb/73b2cb44bafd88ef28423d8ecdf629f0.jpg',
 		isLiked: heartIcon,
 		isSaved: saveIcon,
 		likesCount: '1300',
-		username: '@guti_santi',
-		description: 'Sweat, smile, repeat.',
+		username: '@ana_hillton',
+		description: 'energy for the day',
 	},
 	{
-		image: 'https://images.unsplash.com/photo-1568454537842-d933259bb258',
+		image: 'https://i.pinimg.com/564x/81/1d/ec/811dec8d7c02e6abfba458ece184d376.jpg',
 		isLiked: heartIcon,
 		isSaved: saveIcon,
 		likesCount: '480',
 		username: '@juanesv08',
-		description: 'Exercise: self-love in motion.',
+		description: 'Mastering the ropes',
 	},
 ];
 
