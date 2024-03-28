@@ -73,27 +73,28 @@ class PostImage extends HTMLElement {
 				display: flex;
 				flex-direction: column;
 				align-items: center;
-				width: 25%;
-				border-radius: 30px;
+				width: 46rem;
+				height: 59rem;
+				border-radius: 2.1875rem;
 				background: #2f60e9;
 				margin: 1%;
 				padding: 2rem;
 		}
 		.img-container {
-		width: 20rem;
-    height: 20rem;
+		width: 40.75rem;
+		height: 44.0625rem;
     display: flex;
     justify-content: center;
     overflow: hidden; /* Previene que la imagen sobresalga del contenedor */
-    border-radius: 8px;
-		margin-bottom: 1rem;
+    border-radius: 1.875rem;
+		padding-block:2rem;
 		}
 
 		.img-post {
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
-			border-radius: 8px;
+			border-radius: 1.875rem;
 		}
 
 
@@ -106,16 +107,19 @@ class PostImage extends HTMLElement {
 		}
 
 		.icon-container {
-			width: 2rem;
-    	height: 1.7rem;
+			width: 5.35331rem;
+			height: 2.377rem;
 			display: flex;
 			justify-content: flex-start;
+			padding
+
 		}
 
 		.icon-container img {
 			width: 100%;
 			height: 100%;
-			margin-right: 1rem;
+
+
 		}
 
 		.likes-count, .username, .description{
@@ -126,18 +130,26 @@ class PostImage extends HTMLElement {
 		.likes-count{
 			font-size: 1.2rem;
 			color: #CBF900;
+			font-family: Inter;
+			font-size: 1.542rem;
+			font-style: normal;
+			font-weight: 600;
 		}
 		.username {
-			font-weight: bold;
-			font-size: 1rem;
-			color: white;
+			color: #FFF;
+			font-family: Inter;
+			font-size: 1.875rem;
+			font-style: normal;
+			font-weight: 700;
 
 		}
 		.description {
-
-			font-size: 1rem;
-			color: white;
-			font-weight: normal;
+			color: #FFF;
+			font-family: Inter;
+			font-size: 1.875rem;
+			font-style: normal;
+			font-weight: 400;
+			line-height: normal;
 		}
 
     `;
@@ -158,13 +170,12 @@ class PostImage extends HTMLElement {
 											<img class= "icon-container img" src="${this.isliked}" alt="Like icon">
 											<img class= "icon-container img" src="${this.issaved}" alt="Save icon">
 								 </div>
-
-                    <h3 class= "likes-count">${this.likescount} likes</h3>
+								 <h3 class= "likes-count">${this.likescount} likes</h3>
 										<p
 											<span class= "username" >${this.username} </span>: <span class= "description"> ${this.description}</span>
 											</p>
 
-						</div>
+
 
             </section>
         `;
