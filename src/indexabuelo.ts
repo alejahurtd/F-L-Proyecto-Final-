@@ -57,19 +57,20 @@ class AppContainer extends HTMLElement {
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML += `
-			<style>${abueloStyles}</style>
-			.container-post {
-				display: flex;
-				align-items: flex-start;
-			}
-			.container-tweet {
-				display: flex;
-				align-items: flex-end;
-			}
-			<h3> Hola Mundo </h3>
+            <style>${abueloStyles}</style>
+            .container-post {
+                display: flex;
+                align-items: flex-start;
+            }
+            .container-tweet {
+                display: flex;
+                align-items: flex-end;
+            }
+        </style><h3> Hola Mundo </h3>
 
-			`;
+        `;
 		}
+
 		const PostImageCards = this.ownerDocument.createElement('div');
 		PostImageCards.className = 'container-post';
 		this.PostImageList.forEach((PostImageCard) => {
