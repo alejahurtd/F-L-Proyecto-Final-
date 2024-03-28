@@ -58,6 +58,14 @@ class AppContainer extends HTMLElement {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML += `
 			<style>${abueloStyles}</style>
+			.container-post {
+				display: flex;
+				align-items: flex-start;
+			}
+			.container-tweet {
+				display: flex;
+				align-items: flex-end;
+			}
 			<h3> Hola Mundo </h3>
 
 			`;

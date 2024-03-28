@@ -1,0 +1,12 @@
+* {
+	padding: 0;
+	background: #181818;
+}
+.container-post {
+	display: flex;
+	align-items: flex-start;
+}
+.container-tweet {
+	display: flex;
+	align-items: flex-end;
+}
