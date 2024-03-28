@@ -70,6 +70,8 @@ class AppContainer extends HTMLElement {
 
         `;
 		}
+		const container = this.ownerDocument.createElement('div');
+		container.className = 'card-container';
 
 		const PostImageCards = this.ownerDocument.createElement('div');
 		PostImageCards.className = 'container-post';
