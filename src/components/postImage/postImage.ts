@@ -73,28 +73,29 @@ class PostImage extends HTMLElement {
 				display: flex;
 				flex-direction: column;
 				align-items: center;
-				width: 46rem;
-				height: 59rem;
-				border-radius: 2.1875rem;
+				width: 25rem;
+				height: 35rem;
+				border-radius: 1.5rem;
 				background: #2f60e9;
-				margin: 1%;
-				padding: 2rem;
+				margin: 1rem;
+				padding-top: 1rem;
+				padding-inline:1.5rem;
 		}
 		.img-container {
-		width: 40.75rem;
-		height: 44.0625rem;
+		width: 25rem;
     display: flex;
     justify-content: center;
-    overflow: hidden; /* Previene que la imagen sobresalga del contenedor */
-    border-radius: 1.875rem;
-		padding-block:2rem;
+    overflow: hidden;
+    border-radius:.5rem;
+		padding-block:1rem;
+
 		}
 
 		.img-post {
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
-			border-radius: 1.875rem;
+			border-radius: 1rem;
 		}
 
 
@@ -104,52 +105,52 @@ class PostImage extends HTMLElement {
       flex-direction: column;
       align-items: flex-start;
 
+
 		}
 
 		.icon-container {
-			width: 5.35331rem;
-			height: 2.377rem;
+			width: 2.8rem;
+			height: 1.5rem;
 			display: flex;
 			justify-content: flex-start;
-			padding
 
 		}
 
 		.icon-container img {
 			width: 100%;
 			height: 100%;
-
-
+			padding-left:.4rem;
 		}
 
 		.likes-count, .username, .description{
-			width: 100%;
 			text-align: left;
-			margin-bottom: 0.5rem;
+
 		}
 		.likes-count{
-			font-size: 1.2rem;
 			color: #CBF900;
 			font-family: Inter;
-			font-size: 1.542rem;
+			font-size: 1rem;
 			font-style: normal;
 			font-weight: 600;
+			padding-left:.4rem;
 		}
 		.username {
 			color: #FFF;
 			font-family: Inter;
-			font-size: 1.875rem;
+			font-size: 1rem;
 			font-style: normal;
 			font-weight: 700;
+			padding-left:.5rem;
+			margin-top:-.3rem;
+			padding-bottom:1rem;
 
 		}
 		.description {
 			color: #FFF;
 			font-family: Inter;
-			font-size: 1.875rem;
+			font-size: 1rem;
 			font-style: normal;
 			font-weight: 400;
-			line-height: normal;
 		}
 
     `;

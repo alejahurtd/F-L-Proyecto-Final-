@@ -48,25 +48,36 @@ class PostTweet extends HTMLElement {
 			css.textContent = `
 
 			.container {
-
-				width: 45rem;
-				height: 17.1rem;
-				border-radius: 2.1875rem;
-				border-radius: 2.1875rem;
+				width: 35rem;
+				height: 12rem;
+				border-radius: 1.5rem;
 				background: linear-gradient(0deg, #CBF900 0%, #CBF900 100%), linear-gradient(0deg, #CBF900 0%, #CBF900 100%), #CBF900;
-				margin: 1%;
-				padding-top: 2rem;
+				margin: 1rem;
+				display:flex;
+				flex-direction: column;
+		}
+
+		.tweetandimg{
+			width:30rem;
+			hight:8rem;
+			padding-block:1rem;
+			padding-inline: 3rem;
+			display:flex;
+			align-items:center;
+			flex-direction:row;
+			flex:1;
+			gap:3rem;
 		}
 
 		.img{
 			display: flex;
 			align-items: center;
 
-			padding-inline:2rem;
+
 		}
 		.img-container {
-			width: 10rem;
-			height: 10rem;
+			width: 5rem;
+			height: 5rem;
 			border-radius: 50%;
 			overflow: hidden;
 
@@ -76,35 +87,29 @@ class PostTweet extends HTMLElement {
 			height: 100%;
 			object-fit: cover;
 		}
-		.container-description{
-			padding-inline: 2rem;
-			display:flex;
-			flex-direction:row;
-			margin-bottom:1rem;
-		}
+
 		.description{
 			color: #000;
 			font-family: Inter;
-			font-size: 2rem;
+			font-size: 1.8rem;
 			font-style: normal;
 			font-weight: 500;
 		}
 		.content-container{
-			width: 45rem;
-			height: 6rem;
-			border-radius: 0rem 0rem 2.1875rem 2.1875rem;
+			width: 35rem;
+			height: 4rem;
+			border-radius: 0rem 0rem 1.5rem 1.5rem;
 			background: linear-gradient(0deg, rgba(47, 96, 233, 0.20) 0%, rgba(47, 96, 233, 0.20) 100%), linear-gradient(0deg, #CBF900 0%, #CBF900 100%), #CBF900;
 			display: flex;
+			align-items: flex-end;
 			box-sizing: border-box;
 			align-items:center;
 			padding-inline:2rem;
 		}
 		.username{
-			width: 9.733rem;
-			height: 2.39063rem;
 			color: #181818;
 			font-family: Inter;
-			font-size: 1.875rem;
+			font-size: 1.3rem;
 			font-style: normal;
 			font-weight: 600;
 		}
@@ -116,20 +121,22 @@ class PostTweet extends HTMLElement {
 			this.shadowRoot.innerHTML += `
 						 <style> ${tweetStyles}</style>
 
-            <section class="container">
-						<div class="container-description">
-						<p class= "description"> ${this.description} </p>"
-						<div class= "img">
-						<div class= "img-container">
-						<img class= "img-post" src="${this.image}" alt="Post image">
-						</div>
-						</div>
+      <section class='container'>
+				<div class="tweetandimg">
+				  <div class=tweet>
+					 <p class= "description"> ${this.description} </p>
+					</div>
+					<div class='img'>
+					 <div class= "img-container">
+					   <img class= "img-post" src="${this.image}" alt="Post image">
+				   </div>
+					</div>
+				</div>
+				<div class='infoUser'>
+				 <p class= "username"> ${this.username} </p>
+				</div>
+			</section>
 
-						</div>
-            <div class= "content-container">
-                      <p class= "username"> ${this.username} </p>"
-                    </div>
-            </section>
         `;
 		}
 	}
