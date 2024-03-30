@@ -1,5 +1,6 @@
 import menuStyles from './menuBar.css';
 import logoImg from '../../assets/logo.png';
+import notificationsIcon from '../../assets/icon notifications.png';
 import homeIcon from '../../assets/icon home.png';
 import profileIcon from '../../assets/icon profile.png';
 
@@ -22,25 +23,43 @@ class MenuBar extends HTMLElement {
                     padding: 20px;
                 }
 
-                .logo img, .icons img {
-                    height: 40px; /* Ajusta esto según tus necesidades */
+                .icons img {
+                    height: 40px;
+                    margin-right: 10px
+                }
+
+                .logo img{
+                    height: 35px;
                 }
 
                 .search-box {
                     flex-grow: 1;
+                    height: 40px;
                     display: flex;
                     justify-content: center;
                 }
 
-                .search-box input {
-                    width: 30%; /* Ajusta según lo necesites */
+                .search-box-input {
+                    width: 30%;
                     padding: 5px 10px;
+                    text-align: center;
+                    background-color: #2F60E9;
+                    color: white;
+                    border-radius: 20px;
+                    border: none;
+                    outline:none;
                 }
+
 
                 .icons {
                     display: flex;
                     justify-content: space-between;
-                    width: 100px; /* Ajusta este valor según tus iconos */
+                    margin-right: 35px;
+                    width: 100px;
+                }
+
+                .search-box-input::placeholder {
+                    color: white;
                 }
             `;
 
@@ -54,11 +73,12 @@ class MenuBar extends HTMLElement {
                   <img src="${logoImg}" alt="logo">
                   </div>
                   <div class="search-box">
-                      <input type="text" placeholder="serch...">
+                      <input type="text" class="search-box-input"  placeholder="Search...">
                   </div>
                   <div class="icons">
-                      <img src="${homeIcon}" alt="Icono home">
-                      <img src="${profileIcon}" alt="Icono profile">
+                    <img src="${notificationsIcon}" alt="Icono home">
+                    <img src="${homeIcon}" alt="Icono home">
+                    <img src="${profileIcon}" alt="Icono profile">
                   </div>
               </nav>
           `;
