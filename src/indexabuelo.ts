@@ -56,10 +56,12 @@ class AppContainer extends HTMLElement {
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML += `
+
 			<style>${abueloStyles}</style>
 			<menu-bar></menu-bar>
 
-			`;
+
+        `;
 		}
 
 		const container = this.ownerDocument.createElement('section');

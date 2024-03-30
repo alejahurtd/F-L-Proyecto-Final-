@@ -73,27 +73,29 @@ class PostImage extends HTMLElement {
 				display: flex;
 				flex-direction: column;
 				align-items: center;
-				width: 25%;
-				border-radius: 30px;
+				width: 25rem;
+				height: 35rem;
+				border-radius: 1.5rem;
 				background: #2f60e9;
-				margin: 1%;
-				padding: 2rem;
+				margin: 1rem;
+				padding-top: 1rem;
+				padding-inline:1.5rem;
 		}
 		.img-container {
-		width: 20rem;
-    height: 20rem;
+		width: 25rem;
     display: flex;
     justify-content: center;
-    overflow: hidden; /* Previene que la imagen sobresalga del contenedor */
-    border-radius: 8px;
-		margin-bottom: 1rem;
+    overflow: hidden;
+    border-radius:.5rem;
+		padding-block:1rem;
+
 		}
 
 		.img-post {
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
-			border-radius: 8px;
+			border-radius: 1rem;
 		}
 
 
@@ -103,41 +105,52 @@ class PostImage extends HTMLElement {
       flex-direction: column;
       align-items: flex-start;
 
+
 		}
 
 		.icon-container {
-			width: 2rem;
-    	height: 1.7rem;
+			width: 2.8rem;
+			height: 1.5rem;
 			display: flex;
 			justify-content: flex-start;
+
 		}
 
 		.icon-container img {
 			width: 100%;
 			height: 100%;
-			margin-right: 1rem;
+			padding-left:.4rem;
 		}
 
 		.likes-count, .username, .description{
-			width: 100%;
 			text-align: left;
-			margin-bottom: 0.5rem;
+
 		}
 		.likes-count{
-			font-size: 1.2rem;
 			color: #CBF900;
+			font-family: Inter;
+			font-size: 1rem;
+			font-style: normal;
+			font-weight: 600;
+			padding-left:.4rem;
 		}
 		.username {
-			font-weight: bold;
+			color: #FFF;
+			font-family: Inter;
 			font-size: 1rem;
-			color: white;
+			font-style: normal;
+			font-weight: 700;
+			padding-left:.5rem;
+			margin-top:-.3rem;
+			padding-bottom:1rem;
 
 		}
 		.description {
-
+			color: #FFF;
+			font-family: Inter;
 			font-size: 1rem;
-			color: white;
-			font-weight: normal;
+			font-style: normal;
+			font-weight: 400;
 		}
 
     `;
@@ -158,13 +171,12 @@ class PostImage extends HTMLElement {
 											<img class= "icon-container img" src="${this.isliked}" alt="Like icon">
 											<img class= "icon-container img" src="${this.issaved}" alt="Save icon">
 								 </div>
-
-                    <h3 class= "likes-count">${this.likescount} likes</h3>
+								 <h3 class= "likes-count">${this.likescount} likes</h3>
 										<p
 											<span class= "username" >${this.username} </span>: <span class= "description"> ${this.description}</span>
 											</p>
 
-						</div>
+
 
             </section>
         `;
