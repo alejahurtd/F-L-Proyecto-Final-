@@ -1,10 +1,9 @@
 import abueloStyles from './indexAbuelo.css';
-
 import './components/exportPapa';
+import './components/menuBar/menuBar';
 
 import dataPostImage from './components/postImage/dataPostImage';
 import PostImage, { Attribute as PostImageAttribute } from './components/postImage/postImage';
-
 import dataPostTweet from './components/postTweet/dataPostTweet';
 import PostTweet, { Attribute as PostTweetAttribute } from './components/postTweet/postTweet';
 
@@ -58,23 +57,28 @@ class AppContainer extends HTMLElement {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML += `
 			<style>${abueloStyles}</style>
-			<h3> Hola Mundo </h3>
+			<menu-bar></menu-bar>
 
 			`;
 		}
+
+		const container = this.ownerDocument.createElement('section');
+		container.className = 'container';
+
 		const PostImageCards = this.ownerDocument.createElement('div');
 		PostImageCards.className = 'container-post';
 		this.PostImageList.forEach((PostImageCard) => {
 			PostImageCards.appendChild(PostImageCard);
 		});
-		this.shadowRoot?.appendChild(PostImageCards);
+		container.appendChild(PostImageCards);
 
 		const PostTweetCards = this.ownerDocument.createElement('div');
 		PostTweetCards.className = 'container-tweet';
 		this.PostTweetList.forEach((PostTweetCard) => {
 			PostTweetCards.appendChild(PostTweetCard);
 		});
-		this.shadowRoot?.appendChild(PostTweetCards);
+		container.appendChild(PostTweetCards);
+		this.shadowRoot?.appendChild(container);
 	}
 }
 
