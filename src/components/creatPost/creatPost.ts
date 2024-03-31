@@ -5,9 +5,7 @@ class CreatPost extends HTMLElement {
 		super();
 		this.attachShadow({ mode: 'open' });
 	}
-	connectCallBack() {
-		this.render();
-	}
+
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML += `
@@ -74,5 +72,5 @@ class CreatPost extends HTMLElement {
 	}
 }
 
-export default CreatPost;
 customElements.define('creat-post', CreatPost);
+export default CreatPost;

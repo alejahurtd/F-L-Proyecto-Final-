@@ -89,6 +89,7 @@ class AppContainer extends HTMLElement {
 		container.appendChild(PostTweetCards);
 		this.shadowRoot.appendChild(menuBar);
 		this.shadowRoot?.appendChild(container);
+		this.shadowRoot.appendChild(creatPost);
 	}
 }
 
