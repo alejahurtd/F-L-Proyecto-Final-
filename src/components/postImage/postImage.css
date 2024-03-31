@@ -81,3 +81,10 @@
 	font-style: normal;
 	font-weight: 400;
 }
+.dislike {
+	background-image: URL('../../assets/emptyHeart.png');
+	background-size: cover;
+}
+.like {
+	background-image: URL('../../assets/heart.png');
+}

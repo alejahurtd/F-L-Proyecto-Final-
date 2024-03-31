@@ -55,8 +55,12 @@ class PostImage extends HTMLElement {
 
 	render() {
 		if (this.shadowRoot) {
+			this.shadowRoot.innerHTML += '';
+
 			this.shadowRoot.innerHTML += `
-						 <style> ${postStyles}</style>  `;
+						 <style> ${postStyles}</style>
+
+        `;
 
 			const section = this.ownerDocument.createElement('section');
 			section.className = 'container';
@@ -67,7 +71,8 @@ class PostImage extends HTMLElement {
 
 			const img = this.ownerDocument.createElement('img');
 			img.className = 'img';
-			img.src = this.image;
+			img.src = this.image || '';
+			img.alt = 'Post image';
 			imgContainer.appendChild(img);
 
 			const userContent = this.ownerDocument.createElement('div');
@@ -79,17 +84,17 @@ class PostImage extends HTMLElement {
 
 			const likes = this.ownerDocument.createElement('p');
 			likes.className = 'likes';
-			likes.textContent = `${this.likescount} likes`;
+			likes.textContent = `${this.likescount} likes` || '';
 			userContent.appendChild(likes);
 
 			const paragraph = this.ownerDocument.createElement('p');
 			const usernameSpan = this.ownerDocument.createElement('span');
 			usernameSpan.className = 'username';
-			usernameSpan.textContent = this.username;
+			usernameSpan.textContent = this.username || '';
 
 			const descriptionSpan = this.ownerDocument.createElement('span');
 			descriptionSpan.className = 'description';
-			descriptionSpan.textContent = this.description;
+			descriptionSpan.textContent = this.description || '';
 
 			paragraph.appendChild(usernameSpan);
 			paragraph.appendChild(this.ownerDocument.createTextNode(': '));
