@@ -14,6 +14,7 @@ export enum Attribute {
 }
 
 class PostImage extends HTMLElement {
+	id: string;
 	image?: string;
 	isLiked?: boolean;
 	isSaved?: boolean;
