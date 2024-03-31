@@ -8,6 +8,7 @@ import PostImage, { Attribute as PostImageAttribute } from './components/postIma
 import dataPostTweet from './data/dataPostTweet';
 import PostTweet, { Attribute as PostTweetAttribute } from './components/postTweet/postTweet';
 import MenuBar from './components/menuBar/menuBar';
+import CreatPost from './components/creatPost/creatPost';
 //import CreatPost from './components/exportPapa';
 
 class AppContainer extends HTMLElement {
@@ -82,6 +83,9 @@ class AppContainer extends HTMLElement {
 		this.PostTweetList.forEach((PostTweetCard) => {
 			PostTweetCards.appendChild(PostTweetCard);
 		});
+		const creatPost = this.ownerDocument.createElement('creat-post') as CreatPost;
+		creatPost.className = 'creatPost';
+
 		container.appendChild(PostTweetCards);
 		this.shadowRoot.appendChild(menuBar);
 		this.shadowRoot?.appendChild(container);
