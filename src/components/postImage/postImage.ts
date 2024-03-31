@@ -1,5 +1,9 @@
 import postStyles from './postImage.css';
-import saveIcon from '../../assets/emptyHeart.png';
+import likedIconPath from '../../assets/heart.png';
+import unlikedIconPath from '../../assets/emptyHeart.png';
+import savedIconPath from '../../assets/save.png';
+import unsavedIconPath from '../../assets/emptySave.png';
+
 // Empieza nuestro "diccionario" para los nombres de los atributos HTML que el componente puede recibir.
 // Recomendación de Anne, es mejor manejarlos sin mayusculas, (apesar que en la data esten con mayusculas) porque aveces ts no las lee y marca error
 
@@ -48,11 +52,24 @@ class PostImage extends HTMLElement {
 			case Attribute.isSaved:
 				this.isSaved = newValue === 'true';
 				break;
+			default:
+				(this as any)[propName] = newValue;
 		}
 		this.render();
 	}
 
 	connectedCallback() {
+		this.render();
+	}
+
+	// Evento para nuestros Likes y Saves
+	changeLikeState() {
+		this.isLiked = !this.isLiked;
+		this.render();
+	}
+
+	changeSaveState() {
+		this.isSaved = !this.isSaved;
 		this.render();
 	}
 
@@ -72,8 +89,8 @@ class PostImage extends HTMLElement {
 						 </div>
 						 <div class="userContent">
 						   <div class="iconContainer">
-							    <img class= "icon" src="${this.isLiked}" alt="Like icon" id="likeBtn">
-							   <img class= "icon" src="${this.isSaved}" alt="Save icon" id="saveBtn">
+							    <img class= "icon" src="${this.isLiked ? likedIconPath : unlikedIconPath}" alt="Like icon" id="likeBtn">
+							   <img class= "icon" src="${this.isSaved ? savedIconPath : unsavedIconPath}" alt="Save icon" id="saveBtn">
 							 </div>
 							   <p class= "likes">${this.likescount} likes</p>
 							 <p
@@ -83,6 +100,13 @@ class PostImage extends HTMLElement {
 						 </div>
             </section>
         `;
+			// buscamos nuestros botones en el DOM
+			const likeBtn = this.shadowRoot.querySelector('#likeBtn');
+			const saveBtn = this.shadowRoot.querySelector('#saveBtn');
+
+			// y aquí añadimos el evento para el click
+			likeBtn?.addEventListener('click', () => this.changeLikeState());
+			saveBtn?.addEventListener('click', () => this.changeSaveState());
 		}
 	}
 }
