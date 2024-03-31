@@ -18,69 +18,61 @@
 	z-index: 1000;
 }
 
-/* .creatpost {
-	display: flex;
-	position: absolute;
-	top: 70%;
-	left: 90%;
-}
-
-.action-button {
-	width: 10.3125rem;
-	height: 10.3125rem;
-	border-radius: 10.3125rem;
-	opacity: 0.8;
-	background: #1a335b;
-}
-
-.plus {
-	background-image: url('../../assets/emptyHeart.png');
-}
-
-.none {
-	display: none;
-}
-
-.display {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: flex-end;
-	position: absolute;
-	width: 38.1875rem;
-	height: 28.9375rem;
-	border-radius: 2.1875rem;
-	background: #2f60e9;
-	z-index: 3;
-}
-
-.containerMessages {
-	width: 90%;
-	height: 90%;
-}
-
-.messageCreatPost.messageCreatTweet {
-	color: #fff;
-	font-family: Inter;
-	font-size: 3.125rem;
-	font-style: normal;
-	font-weight: 600;
-	align-items: center;
-	justify-content: center;
-	padding: 3rem;
-}
-
-.line.line2 {
-	border-top: 1px solid #ffffff;
-}
-
-.display-opacity-div {
-	display: flex;
+.modal-backdrop {
 	position: fixed;
-	width: 100%;
-	height: 100%;
-	opacity: 0.8;
-	background: #ede9e9;
-	backdrop-filter: blur(25px);
-	z-index: 2;
-} */
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 1050;
+}
+
+.modal {
+	position: fixed;
+	right: 4rem;
+	/* top: 20px; */
+	bottom: 90px;
+	background-color: #2f60e9;
+	color: white;
+	padding: 20px;
+	border-radius: 20px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+	z-index: 1100;
+	width: 200px;
+	height: 150px;
+}
+
+.modal-content p {
+	position: relative;
+	font-size: 1.3rem;
+	margin-left: 10px;
+	padding-bottom: 10px;
+}
+
+.modal-content p::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 120px;
+	height: 2px;
+	background-color: white;
+}
+
+.modal-content p.new-post {
+	margin-bottom: 2rem; /* Separación hacia abajo para el párrafo "New Post" */
+}
+
+.modal-content p.new-tweet {
+	margin-top: 1rem; /* Separación hacia arriba para el párrafo "New Tweet" */
+}
+
+.close-modal {
+	position: absolute;
+	top: 0;
+	right: 20px;
+	font-size: 1.7rem;
+	cursor: pointer;
+	margin-top: 10px;
+}

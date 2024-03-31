@@ -7,7 +7,6 @@ import PostImage, { Attribute as PostImageAttribute } from './components/postIma
 
 import dataPostTweet from './data/dataPostTweet';
 import PostTweet, { Attribute as PostTweetAttribute } from './components/postTweet/postTweet';
-import CreatPost from './components/creatPost/creatPost';
 import MenuBar from './components/menuBar/menuBar';
 import CreatePostButton from './components/creatPost/creatPost';
 

@@ -14,22 +14,36 @@
 
 .logo img,
 .icons img {
-	height: 2.5rem; /* Ajusta el tamaño de los iconos y logo */
+	height: 2.5rem;
 }
 
 .search-box {
 	flex-grow: 1; /* Hace que el input de búsqueda ocupe el espacio disponible */
 	display: flex;
-	justify-content: center; /* Centra el input de búsqueda */
+	justify-content: center;
 }
 
 .search-box input {
-	width: 50%; /* Ajusta esto según qué tan grande quieres el campo de búsqueda */
-	padding: 5px 10px; /* Añade un poco de padding interior para que el texto no esté justo en el borde */
+	width: 50%;
+	padding: 5px 10px;
 }
 
 .icons {
 	display: flex;
-	justify-content: space-between; /* Espacia los iconos equitativamente */
-	width: 120px; /* Ajusta este valor basado en el tamaño de tus iconos y el espacio que quieres entre ellos */
+	justify-content: space-between;
+	width: 120px;
+}
+
+/* version responsive */
+
+@media (max-width: 768px) {
+	.menu-bar {
+		justify-content: center;
+	}
+
+	.search-box,
+	.search-box-input,
+	.icons {
+		display: none; /* Ocultar iconos y barra  */
+	}
 }
