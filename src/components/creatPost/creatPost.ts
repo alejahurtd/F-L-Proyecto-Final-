@@ -1,15 +1,19 @@
-import creatPostStyle from '../creatPost/creatPost.css';
+import creatPostStyle from './creatPost.css';
 
 class CreatPost extends HTMLElement {
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
+		this.render();
 	}
 
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML += `
 			<style> ${creatPostStyle} </style>`;
+
+			const opacityDiv = this.ownerDocument.createElement('div');
+			opacityDiv.className = 'none';
 
 			const creatPost = this.ownerDocument.createElement('section');
 			creatPost.className = 'creatpost';
@@ -26,16 +30,20 @@ class CreatPost extends HTMLElement {
 				console.log('Button clicked!', button.id);
 				popUp.classList.add('display');
 				popUp.classList.remove('none');
+				opacityDiv.classList.add('display-opacity-div');
+				opacityDiv.classList.remove('none');
 			});
 
 			const hidePopUp = () => {
 				popUp.classList.remove('display');
 				popUp.classList.add('none');
+				opacityDiv.classList.remove('display-opacity-div');
+				opacityDiv.classList.add('none');
 			};
 			creatPost.appendChild(button);
 
 			const popUp = this.ownerDocument.createElement('section');
-			popUp.className = 'containerPopUp';
+			popUp.className = 'none';
 
 			const containerMessages = this.ownerDocument.createElement('div');
 			containerMessages.className = 'containerMessages';
@@ -65,6 +73,8 @@ class CreatPost extends HTMLElement {
 			closeButton.textContent = 'Close';
 			closeButton.addEventListener('click', hidePopUp);
 			popUp.appendChild(closeButton);
+
+			this.shadowRoot.appendChild(opacityDiv);
 
 			this.shadowRoot.appendChild(creatPost);
 			this.shadowRoot.appendChild(popUp);

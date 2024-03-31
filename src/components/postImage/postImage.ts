@@ -25,18 +25,6 @@ class PostImage extends HTMLElement {
 		this.attachShadow({ mode: 'open' });
 	}
 
-	changeLike = () => {
-		this.isLiked = !this.isLiked;
-		console.log('isLiked:', this.isLiked);
-		this.render();
-	};
-
-	changeSaved = () => {
-		this.isSaved = !this.isSaved;
-		console.log('isSaved:', this.isSaved);
-		this.render();
-	};
-
 	static get observedAttributes() {
 		const attrs: Record<Attribute, null> = {
 			image: null,
@@ -66,23 +54,9 @@ class PostImage extends HTMLElement {
 	}
 
 	render() {
-		let heart = '../../assets/emptyHeart.png';
-		if (this.isLiked) {
-			heart = '../../assest/heart.png';
-		}
-
-		let save = '../../assest/emptySave.png';
-		if (this.isSaved) {
-			save = '../../assest/save.png';
-		}
-
 		if (this.shadowRoot) {
-			this.shadowRoot.innerHTML = '';
-
 			this.shadowRoot.innerHTML += `
-						 <style> ${postStyles}</style>
-
-        `;
+						 <style> ${postStyles}</style>  `;
 
 			const section = this.ownerDocument.createElement('section');
 			section.className = 'container';
@@ -93,8 +67,7 @@ class PostImage extends HTMLElement {
 
 			const img = this.ownerDocument.createElement('img');
 			img.className = 'img';
-			img.src = this.image || '';
-			img.alt = 'Post image';
+			img.src = this.image;
 			imgContainer.appendChild(img);
 
 			const userContent = this.ownerDocument.createElement('div');
@@ -104,35 +77,19 @@ class PostImage extends HTMLElement {
 			iconContainer.className = 'iconContainer';
 			userContent.appendChild(iconContainer);
 
-			const likeBtn = this.ownerDocument.createElement('img');
-			likeBtn.className = 'icon';
-			likeBtn.id = heart || 'likeBtn';
-			likeBtn.addEventListener('click', () => {
-				console.log('likeBtn clicked!', likeBtn.id);
-			});
-			iconContainer.appendChild(likeBtn);
-
-			const saveBtn = this.ownerDocument.createElement('img');
-			saveBtn.className = 'icon';
-			saveBtn.id = save || '';
-			saveBtn.addEventListener('click', () => {
-				console.log('saveBtn clicked', saveBtn.id);
-			});
-			iconContainer.appendChild(saveBtn);
-
 			const likes = this.ownerDocument.createElement('p');
 			likes.className = 'likes';
-			likes.textContent = `${this.likescount} likes` || '';
+			likes.textContent = `${this.likescount} likes`;
 			userContent.appendChild(likes);
 
 			const paragraph = this.ownerDocument.createElement('p');
 			const usernameSpan = this.ownerDocument.createElement('span');
 			usernameSpan.className = 'username';
-			usernameSpan.textContent = this.username || '';
+			usernameSpan.textContent = this.username;
 
 			const descriptionSpan = this.ownerDocument.createElement('span');
 			descriptionSpan.className = 'description';
-			descriptionSpan.textContent = this.description || '';
+			descriptionSpan.textContent = this.description;
 
 			paragraph.appendChild(usernameSpan);
 			paragraph.appendChild(this.ownerDocument.createTextNode(': '));
