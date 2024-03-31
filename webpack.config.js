@@ -1,13 +1,13 @@
 const path = require('path');
 
 module.exports = {
-	entry: './src/indexAbuelo.ts',
+	entry: './src/indexabuelo.ts',
 	mode: 'development',
 	module: {
 		rules: [
 			{
 				test: /\.css$/i,
-				use: ['style-loader', 'css-loader'],
+				use: ['css-loader'],
 			},
 			{
 				test: /\.tsx?$/,
@@ -15,17 +15,14 @@ module.exports = {
 				exclude: /node_modules/,
 			},
 			{
-				test: /\.(png|svg|jpg|jpeg|gif)$/i,
+				test: /\.(png|jpe?g|gif)$/i,
 				use: [
 					{
 						loader: 'file-loader',
-						options: {
-							outputPath: 'assets/images/', // Los archivos se moverán a dist/assets/images/
-							// La ruta que se usará en el bundle para referenciar las imágenes
-						},
 					},
 				],
 			},
+			,
 		],
 	},
 	resolve: {

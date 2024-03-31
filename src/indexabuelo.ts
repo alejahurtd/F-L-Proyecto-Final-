@@ -1,15 +1,19 @@
 import abueloStyles from './indexAbuelo.css';
-import './components/exportPapa';
-import './components/menuBar/menuBar';
 
-import dataPostImage from './components/postImage/dataPostImage';
+import './components/exportPapa';
+
+import dataPostImage from './data/dataPostImage';
 import PostImage, { Attribute as PostImageAttribute } from './components/postImage/postImage';
-import dataPostTweet from './components/postTweet/dataPostTweet';
+
+import dataPostTweet from './data/dataPostTweet';
 import PostTweet, { Attribute as PostTweetAttribute } from './components/postTweet/postTweet';
+import MenuBar from './components/menuBar/menuBar';
+//import CreatPost from './components/exportPapa';
 
 class AppContainer extends HTMLElement {
 	PostImageList: PostImage[] = [];
 	PostTweetList: PostTweet[] = [];
+	//CreatPostList: CreatPost[] = [];
 
 	constructor() {
 		super();
@@ -22,8 +26,8 @@ class AppContainer extends HTMLElement {
 
 			// creamos nuestra tarjeta con la info especifica que necesita mostrar
 			PostImageCard.setAttribute(PostImageAttribute.image, data.image);
-			PostImageCard.setAttribute(PostImageAttribute.isliked, data.isLiked);
-			PostImageCard.setAttribute(PostImageAttribute.issaved, data.isSaved);
+			PostImageCard.setAttribute(PostImageAttribute.isLiked, data.isLiked ? 'true' : 'false');
+			PostImageCard.setAttribute(PostImageAttribute.isSaved, data.isSaved ? 'true' : 'false');
 			PostImageCard.setAttribute(PostImageAttribute.likescount, data.likesCount);
 			PostImageCard.setAttribute(PostImageAttribute.username, data.username);
 			PostImageCard.setAttribute(PostImageAttribute.description, data.description);
@@ -56,13 +60,12 @@ class AppContainer extends HTMLElement {
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML += `
-
-			<style>${abueloStyles}</style>
-			<menu-bar></menu-bar>
-
-
+            <style>${abueloStyles}</style>
         `;
 		}
+
+		const menuBar = this.ownerDocument.createElement('menu-bar') as MenuBar;
+		menuBar.className = 'menubar';
 
 		const container = this.ownerDocument.createElement('section');
 		container.className = 'container';
@@ -80,6 +83,7 @@ class AppContainer extends HTMLElement {
 			PostTweetCards.appendChild(PostTweetCard);
 		});
 		container.appendChild(PostTweetCards);
+		this.shadowRoot.appendChild(menuBar);
 		this.shadowRoot?.appendChild(container);
 	}
 }

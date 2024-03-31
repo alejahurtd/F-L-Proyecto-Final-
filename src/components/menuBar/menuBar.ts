@@ -80,6 +80,7 @@ class MenuBar extends HTMLElement {
                     <img src="${homeIcon}" alt="Icono home">
                     <img src="${profileIcon}" alt="Icono profile">
                   </div>
+
               </nav>
           `;
 		}

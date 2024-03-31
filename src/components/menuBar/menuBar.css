@@ -1,13 +1,20 @@
+* {
+	padding: 0;
+	margin: 0;
+}
 .menu-bar {
+	width: auto;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 0 20px;
+	padding: 2rem;
+	padding-inline: 10rem;
+	background-color: #181818;
 }
 
 .logo img,
 .icons img {
-	height: 50px; /* Ajusta el tamaño de los iconos y logo */
+	height: 3rem; /* Ajusta el tamaño de los iconos y logo */
 }
 
 .search-box {
