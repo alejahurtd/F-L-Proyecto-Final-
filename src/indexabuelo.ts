@@ -13,7 +13,6 @@ import CreatePostButton from './components/creatPost/creatPost';
 class AppContainer extends HTMLElement {
 	PostImageList: PostImage[] = [];
 	PostTweetList: PostTweet[] = [];
-	//CreatPostList: CreatPost[] = [];
 
 	constructor() {
 		super();
@@ -87,6 +86,7 @@ class AppContainer extends HTMLElement {
 
 		this.shadowRoot.appendChild(createPostButton);
 		this.shadowRoot.appendChild(menuBar);
+
 		this.shadowRoot?.appendChild(container);
 	}
 }

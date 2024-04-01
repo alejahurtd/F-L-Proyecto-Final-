@@ -14,57 +14,6 @@ class MenuBar extends HTMLElement {
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = '';
-			const css = document.createElement('style');
-			css.textContent = `
-                .menu-bar {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    padding: 20px;
-                }
-
-                .icons img {
-                    height: 40px;
-                    margin-right: 10px
-                }
-
-                .logo img{
-                    height: 35px;
-                }
-
-                .search-box {
-                    flex-grow: 1;
-                    height: 40px;
-                    display: flex;
-                    justify-content: center;
-                }
-
-                .search-box-input {
-                    width: 30%;
-                    padding: 5px 10px;
-                    text-align: center;
-                    background-color: #2F60E9;
-                    color: white;
-                    border-radius: 20px;
-                    border: none;
-                    outline:none;
-                }
-
-
-                .icons {
-                    display: flex;
-                    justify-content: space-between;
-                    margin-right: 35px;
-                    width: 100px;
-                }
-
-                .search-box-input::placeholder {
-                    color: white;
-                }
-            `;
-
-			// Añadir el CSS al shadow DOM
-			this.shadowRoot.appendChild(css);
 
 			this.shadowRoot.innerHTML += `
               <style>${menuStyles}</style>
@@ -82,6 +31,7 @@ class MenuBar extends HTMLElement {
                   </div>
 
               </nav>
+              <div class="line-separator"></div>
           `;
 		}
 	}

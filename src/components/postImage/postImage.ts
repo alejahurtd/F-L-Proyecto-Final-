@@ -92,10 +92,16 @@ class PostImage extends HTMLElement {
 							    <img class= "icon" src="${this.isLiked ? likedIconPath : unlikedIconPath}" alt="Like icon" id="likeBtn">
 							   <img class= "icon" src="${this.isSaved ? savedIconPath : unsavedIconPath}" alt="Save icon" id="saveBtn">
 							 </div>
-							   <p class= "likes">${this.likescount} likes</p>
+							 <div class= "likeContainer">
+							 <p class= "likes">${this.likescount} likes</p>
+							 </div>
+							 <div class= "username-container">
 							 <p
 							   <span class= "username" >${this.username} </span>: <span class= "description"> ${this.description}</span>
 							 </p>
+							 </div>
+
+
 
 						 </div>
             </section>

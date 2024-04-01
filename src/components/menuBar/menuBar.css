@@ -2,36 +2,51 @@
 	padding: 0;
 	margin: 0;
 }
+
 .menu-bar {
-	width: auto;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 2rem;
-	padding-inline: 10rem;
+	padding: 40px;
 	background-color: #181818;
 }
 
-.logo img,
 .icons img {
-	height: 2.5rem;
+	height: 40px;
+	margin-right: 10px;
+}
+
+.logo img {
+	height: 35px;
 }
 
 .search-box {
-	flex-grow: 1; /* Hace que el input de búsqueda ocupe el espacio disponible */
+	flex-grow: 1;
+	height: 40px;
 	display: flex;
 	justify-content: center;
 }
 
-.search-box input {
-	width: 50%;
+.search-box-input {
+	width: 30%;
 	padding: 5px 10px;
+	text-align: center;
+	background-color: #2f60e9;
+	color: white;
+	border-radius: 20px;
+	border: none;
+	outline: none;
 }
 
 .icons {
 	display: flex;
 	justify-content: space-between;
-	width: 120px;
+	margin-right: 35px;
+	width: 100px;
+}
+
+.search-box-input::placeholder {
+	color: white;
 }
 
 /* version responsive */

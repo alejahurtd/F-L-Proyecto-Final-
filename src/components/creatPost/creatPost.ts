@@ -27,7 +27,7 @@ class CreatePostButton extends HTMLElement {
 		<span class="close-modal">&times;</span>
 		<div class="modal-content">
 				<p class= "new-post">New post</p>
-				<p class= "new-tweet">New Tweet</p>
+				<p class= "new-tweet">New tweet</p>
 		</div>
 		`;
 
