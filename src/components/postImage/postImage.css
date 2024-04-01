@@ -128,16 +128,16 @@
 	.userContent,
 	.likeContainer,
 	.username-container {
-		padding-left: 1rem; /* Padding izquierdo uniforme para alinear el contenido */
+		padding-left: 1rem;
 	}
 
 	.icon {
-		margin-top: 0; /* Remueve el margen superior negativo */
+		margin-top: 0;
 	}
 
 	.likes,
 	.username,
 	.description {
-		font-size: 1rem; /* Tamaño de fuente ajustado para pantallas pequeñas */
+		font-size: 1rem;
 	}
 }

@@ -30,13 +30,14 @@
 	.container {
 		display: flex;
 		flex-direction: column;
-		align-items: center; /* Centra los contenidos en pantallas pequeñas */
+		align-items: center;
+		margin-top: -1.5rem;
 	}
 
 	.container-post,
 	.container-tweet {
-		margin-right: 0; /* Elimina el margen derecho para maximizar el uso del espacio */
-		align-items: center; /* Asegura que los elementos internos también estén centrados */
-		width: 90%; /* Ajusta el ancho para dar un poco de margen en los lados */
+		margin-right: 0;
+		align-items: center;
+		width: 90%;
 	}
 }
