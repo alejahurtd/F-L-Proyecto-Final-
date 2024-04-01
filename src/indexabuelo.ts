@@ -1,16 +1,16 @@
 import abueloStyles from './indexAbuelo.css';
 
+// componentes
 import './components/exportPapa';
 import MenuPhoneBar from './components/menuPhone/menuPhone';
-
-import dataPostImage from './data/dataPostImage';
 import PostImage, { Attribute as PostImageAttribute } from './components/postImage/postImage';
-
-import dataPostTweet from './data/dataPostTweet';
 import PostTweet, { Attribute as PostTweetAttribute } from './components/postTweet/postTweet';
 import MenuBar from './components/menuBar/menuBar';
-
 import CreatePostButton from './components/creatPost/creatPost';
+
+// Data
+import dataPostImage from './data/dataPostImage';
+import dataPostTweet from './data/dataPostTweet';
 
 class AppContainer extends HTMLElement {
 	PostImageList: PostImage[] = [];
@@ -66,9 +66,9 @@ class AppContainer extends HTMLElement {
 
 		const menuBar = this.ownerDocument.createElement('menu-bar') as MenuBar;
 		menuBar.className = 'menubar';
-
 		const menuPhoneBar = this.ownerDocument.createElement('menu-phone') as MenuPhoneBar;
 		menuPhoneBar.className = 'menuphone';
+
 		const container = this.ownerDocument.createElement('section');
 		container.className = 'container';
 
@@ -86,10 +86,8 @@ class AppContainer extends HTMLElement {
 		});
 
 		container.appendChild(PostTweetCards);
-		const createPostButton = this.ownerDocument.createElement('create-post-button');
-
+		const createPostButton = this.ownerDocument.createElement('create-post-button') as CreatePostButton;
 		this.shadowRoot.appendChild(createPostButton);
-
 		this.shadowRoot.appendChild(menuBar);
 		this.shadowRoot.appendChild(menuPhoneBar);
 

@@ -7,7 +7,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 40px;
+	padding: 3rem;
 	background-color: #181818;
 }
 
@@ -30,7 +30,7 @@
 
 .search-box-input {
 	width: 25%;
-	padding: 5px 10px;
+	padding: 1rem 2rem;
 	text-align: center;
 	background-color: #2f60e9;
 	color: white;
@@ -43,7 +43,7 @@
 	display: flex;
 	justify-content: space-between;
 	margin-right: 9rem;
-	width: 100px;
+	width: 6rem;
 }
 
 .search-box-input::placeholder {
@@ -55,6 +55,8 @@
 @media (max-width: 768px) {
 	.menu-bar {
 		justify-content: center;
+		padding: 2.5rem;
+		padding-bottom: 0.5rem;
 	}
 
 	.logo img {

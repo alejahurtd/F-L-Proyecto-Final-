@@ -76,7 +76,7 @@ const dataPostTweet: DataTweet[] = [
 	{
 		image:
 			'https://images.pexels.com/photos/17538474/pexels-photo-17538474/free-photo-of-mujer-joven-sonriente-sonriendo.jpeg?auto=compress&cs=tinysrgb&w=600',
-		description: 'Green tea kind of morning. #ZenStart 🍵🍃',
+		description: 'Green tea kind of morning. #ZenStart 🍵',
 		username: '@ana_hillton',
 	},
 ];

@@ -1,8 +1,12 @@
-* {
-	padding: 0;
+html,
+body {
 	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
 	background-color: #181818;
 	font-family: 'Inter', sans-serif;
+	overflow-x: hidden;
 }
 
 .container {
@@ -10,6 +14,7 @@
 	display: grid;
 	grid-template-columns: 1.3fr 1fr;
 	grid-template-rows: auto auto;
+	min-height: 100vh;
 }
 .container-post {
 	display: flex;
@@ -31,7 +36,6 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		margin-top: -1.5rem;
 	}
 
 	.container-post,
