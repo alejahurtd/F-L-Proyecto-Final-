@@ -45,7 +45,7 @@ class PostTweet extends HTMLElement {
 			this.shadowRoot.innerHTML += `
 						 <style> ${tweetStyles}</style>
       <section class="container">
-				<div class="tweetandimg">
+				<div class="container__tweet-img">
 				  <div class=tweet>
 					 <p class= "description"> ${this.description} </p>
 					</div>

@@ -6,7 +6,7 @@
 	height: 36rem;
 	border-radius: 1.6rem;
 	background: #2f60e9;
-	margin: 1.5%;
+	margin-bottom: 20px;
 }
 
 .imgContainer {
@@ -90,4 +90,54 @@
 }
 .like {
 	background-image: URL('../../assets/heart.png');
+}
+
+@media (max-width: 768px) {
+	.container {
+		width: 20rem;
+		height: 27rem;
+		margin-bottom: 20px;
+	}
+
+	.imgContainer {
+		height: 65%; /* Altura automática para ajustarse a la imagen */
+		padding: 1rem 0;
+		width: 85%;
+		display: flex;
+		justify-content: center;
+		overflow: hidden;
+	}
+
+	.iconContainer {
+		height: 25%;
+		display: flex;
+		justify-content: flex-start;
+		padding-top: 0.3rem;
+		padding-left: 0.2rem;
+	}
+
+	.likeContainer {
+		padding-left: 1rem;
+		margin-top: -0.3rem;
+		margin-bottom: 0.2rem;
+	}
+	.userContent {
+		width: 100%;
+		height: 20%;
+	}
+	.userContent,
+	.likeContainer,
+	.username-container {
+		padding-left: 1rem; /* Padding izquierdo uniforme para alinear el contenido */
+	}
+
+	.icon {
+		margin-top: 0; /* Remueve el margen superior negativo */
+	}
+
+	.likes,
+	.username,
+	.description {
+		font-size: 1rem; /* Tamaño de fuente ajustado para pantallas pequeñas */
+	}
 }

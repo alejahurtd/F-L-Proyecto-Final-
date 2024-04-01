@@ -1,12 +1,15 @@
 .container {
-	width: 30rem;
-	height: 12rem;
+	display: flex;
+	flex-direction: column;
+	width: 25rem;
+	height: 10rem;
 	border-radius: 1.5rem;
-	background: linear-gradient(0deg, #cbf900 0%, #cbf900 100%), linear-gradient(0deg, #cbf900 0%, #cbf900 100%), #cbf900;
-	margin: 2%;
+	background: #cbf900;
+	margin: 10px;
+	margin-bottom: 25px;
 }
 
-.tweetandimg {
+.container__tweet-img {
 	height: 40%;
 	padding-block: 2rem;
 	padding-inline: 3rem;
@@ -15,29 +18,29 @@
 	flex-direction: row;
 }
 .tweet {
-	width: 80%;
+	width: 60%;
 }
 
 .description {
-	font-family: Inter;
-	font-size: 1.5rem;
+	font-size: 1.3rem;
 	font-style: normal;
 	font-weight: 500;
 	color: #181818;
 }
 
 .img {
-	width: 20%;
+	width: 50%;
 	display: flex;
 	justify-content: center;
 	box-sizing: content-box;
 }
 
 .img-container {
-	width: 4.03388rem;
-	height: 4.45694rem;
+	width: 5rem;
+	height: 5rem;
 	border-radius: 50%;
 	overflow: hidden;
+	margin-left: 2rem;
 }
 .img-post {
 	width: 100%;
@@ -46,10 +49,9 @@
 }
 
 .infoUser {
-	height: 30%;
+	height: 25%;
 	border-radius: 0rem 0rem 1.5rem 1.5rem;
-	background: linear-gradient(0deg, rgba(47, 96, 233, 0.2) 0%, rgba(47, 96, 233, 0.2) 100%),
-		linear-gradient(0deg, #cbf900 0%, #cbf900 100%), #cbf900;
+	background: #abda2f;
 	display: flex;
 	align-items: flex-end;
 	box-sizing: border-box;
@@ -58,8 +60,41 @@
 }
 .username {
 	color: #181818;
-	font-family: Inter;
 	font-size: 1rem;
 	font-style: normal;
 	font-weight: 600;
+}
+
+/* Responsiveee */
+@media (max-width: 768px) {
+	.container {
+		width: 100%; /* Ajusta el ancho del contenedor al 100% para pantallas pequeñas */
+		margin: 10px 0; /* Ajusta el margen para dispositivos más pequeños */
+		padding: 0;
+		height: auto; /* Hace que la altura se ajuste al contenido */
+	}
+
+	.container__tweet-img {
+		padding: 1rem; /* Reduce el padding en dispositivos más pequeños */
+		flex-direction: column; /* Cambia la dirección para apilar la imagen sobre la descripción */
+	}
+
+	.tweet,
+	.img {
+		width: 100%; /* Ajusta el ancho para que ocupe el disponible */
+	}
+
+	.img-container {
+		margin: 0 auto; /* Centra la imagen de perfil */
+		margin-bottom: 1rem; /* Añade un margen abajo para separar de la descripción */
+	}
+
+	.infoUser {
+		padding: 1rem; /* Reduce el padding en la sección de información del usuario */
+	}
+
+	.description,
+	.username {
+		text-align: center; /* Centra el texto para una mejor presentación en dispositivos pequeños */
+	}
 }
