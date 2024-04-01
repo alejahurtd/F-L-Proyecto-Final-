@@ -100,7 +100,7 @@
 	}
 
 	.imgContainer {
-		height: 65%; /* Altura automática para ajustarse a la imagen */
+		height: 65%;
 		padding: 1rem 0;
 		width: 85%;
 		display: flex;
