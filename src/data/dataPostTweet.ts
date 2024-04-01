@@ -10,67 +10,74 @@ interface DataTweet {
 
 const dataPostTweet: DataTweet[] = [
 	{
-		image:
-			'https://images.pexels.com/photos/11000413/pexels-photo-11000413.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load',
-		description: 'Ready for the next marathons',
-		username: '@guti_santi',
+		image: 'https://images.pexels.com/photos/6577906/pexels-photo-6577906.jpeg?auto=compress&cs=tinysrgb&w=600',
+		description: 'Hydration is the key to a vibrant life 💧🔑',
+		username: '@nata_ortiz',
 	},
 	{
-		image: 'https://i.pinimg.com/564x/8d/e2/53/8de253777f0974e37f142cadb822593b.jpg',
-		description: 'Exercise: self-love in motion',
+		image:
+			'https://images.pexels.com/photos/17895316/pexels-photo-17895316/free-photo-of-mujer-verano-modelo-rubia.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load',
+		description: 'Nature walks are my therapy🌿❤️  #NatureHeals ',
 		username: '@alejah__',
 	},
 	{
-		image: 'https://i.pinimg.com/564x/73/b2/cb/73b2cb44bafd88ef28423d8ecdf629f0.jpg',
-		description: 'energy for the day',
-		username: '@ana_hillton',
+		image:
+			'https://images.pexels.com/photos/6455804/pexels-photo-6455804.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+		description: '🌊🌞 Beach day bliss. #SeaLove',
+		username: '@davidhc__',
 	},
 	{
-		image: 'https://i.pinimg.com/564x/81/1d/ec/811dec8d7c02e6abfba458ece184d376.jpg',
-		description: 'Mastering the ropes',
+		image:
+			'https://images.pexels.com/photos/16182644/pexels-photo-16182644/free-photo-of-hombre-en-pie-de-pie-joven.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+		description: ' Early run, best start. #MorningRun 🏃‍♂️',
 		username: '@juanesv08',
 	},
 	{
 		image:
-			'https://images.pexels.com/photos/11000413/pexels-photo-11000413.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load',
-		description: 'Ready for the next marathons',
-		username: '@guti_santi',
+			'https://images.pexels.com/photos/16182644/pexels-photo-16182644/free-photo-of-hombre-en-pie-de-pie-joven.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+		description: '🏋️‍♀️💪 New PR on the deadlift! #StrengthGoals',
+		username: '@juanesv08',
 	},
 	{
-		image: 'https://i.pinimg.com/564x/8d/e2/53/8de253777f0974e37f142cadb822593b.jpg',
-		description: 'Exercise: self-love in motion',
-		username: '@alejah__',
+		image: 'https://images.pexels.com/photos/6577906/pexels-photo-6577906.jpeg?auto=compress&cs=tinysrgb&w=600',
+		description: 'Post-workout smoothie 💪🌿',
+		username: '@nata_ortiz',
 	},
 	{
-		image: 'https://i.pinimg.com/564x/73/b2/cb/73b2cb44bafd88ef28423d8ecdf629f0.jpg',
-		description: 'energy for the day',
+		image:
+			'https://images.pexels.com/photos/17538474/pexels-photo-17538474/free-photo-of-mujer-joven-sonriente-sonriendo.jpeg?auto=compress&cs=tinysrgb&w=600',
+		description: 'Snack time: veggies and hummus🥒🥕 #HealthySnacks',
 		username: '@ana_hillton',
 	},
 	{
-		image: 'https://i.pinimg.com/564x/81/1d/ec/811dec8d7c02e6abfba458ece184d376.jpg',
-		description: 'Mastering the ropes',
+		image:
+			'https://images.pexels.com/photos/4531700/pexels-photo-4531700.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load',
+		description: '📖✨ Found a gem of a book! #ReadingJoy',
+		username: '@andreasv__',
+	},
+	{
+		image:
+			'https://images.pexels.com/photos/16182644/pexels-photo-16182644/free-photo-of-hombre-en-pie-de-pie-joven.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+		description: 'HIIT workout done. Who else loves the burn? 🤾‍♀️🔥',
 		username: '@juanesv08',
 	},
 	{
 		image:
-			'https://images.pexels.com/photos/11000413/pexels-photo-11000413.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load',
-		description: 'Ready for the next marathons',
-		username: '@guti_santi',
-	},
-	{
-		image: 'https://i.pinimg.com/564x/8d/e2/53/8de253777f0974e37f142cadb822593b.jpg',
-		description: 'Exercise: self-love in motion',
+			'https://images.pexels.com/photos/17895316/pexels-photo-17895316/free-photo-of-mujer-verano-modelo-rubia.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load',
+		description: '🤸‍♀️🧘‍♂️ Yoga and gymnastics fusion. Flexibility is key! ',
 		username: '@alejah__',
 	},
 	{
-		image: 'https://i.pinimg.com/564x/73/b2/cb/73b2cb44bafd88ef28423d8ecdf629f0.jpg',
-		description: 'energy for the day',
-		username: '@ana_hillton',
+		image:
+			'https://images.pexels.com/photos/6455804/pexels-photo-6455804.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+		description: 'Boxing class was intense today 🥊🔥 ',
+		username: '@davidhc__',
 	},
 	{
-		image: 'https://i.pinimg.com/564x/81/1d/ec/811dec8d7c02e6abfba458ece184d376.jpg',
-		description: 'Mastering the ropes',
-		username: '@juanesv08',
+		image:
+			'https://images.pexels.com/photos/17538474/pexels-photo-17538474/free-photo-of-mujer-joven-sonriente-sonriendo.jpeg?auto=compress&cs=tinysrgb&w=600',
+		description: 'Green tea kind of morning. #ZenStart 🍵🍃',
+		username: '@ana_hillton',
 	},
 ];
 

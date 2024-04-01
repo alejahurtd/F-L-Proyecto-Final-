@@ -30,7 +30,7 @@ const dataPostImage: DataPost[] = [
 		isSaved: false,
 		likesCount: '590',
 		username: '@alejah__',
-		description: 'Exercise: self-love in motion',
+		description: 'Exercise: self-❤️  in motion',
 	},
 	{
 		id: '3',
@@ -39,7 +39,7 @@ const dataPostImage: DataPost[] = [
 		isSaved: true,
 		likesCount: '1300',
 		username: '@ana_hillton',
-		description: 'energy for the day',
+		description: 'Energy for the day ✨🥕',
 	},
 	{
 		id: '4',
@@ -48,7 +48,7 @@ const dataPostImage: DataPost[] = [
 		isSaved: false,
 		likesCount: '480',
 		username: '@juanesv08',
-		description: 'Mastering the ropes',
+		description: 'Mastering the ropes 🔥',
 	},
 ];
 
