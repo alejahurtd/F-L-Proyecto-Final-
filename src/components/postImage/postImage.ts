@@ -1,3 +1,5 @@
+// importamos css e iconos
+
 import postStyles from './postImage.css';
 import likedIconPath from '../../assets/heart.png';
 import unlikedIconPath from '../../assets/emptyHeart.png';
@@ -31,6 +33,8 @@ class PostImage extends HTMLElement {
 		this.attachShadow({ mode: 'open' });
 	}
 
+	// observedAttributes retorna una lista de atributos que cuando alguno cambia desencadena o se llama a "attributeChangedCallback"
+
 	static get observedAttributes() {
 		const attrs: Record<Attribute, null> = {
 			id: null,
@@ -43,6 +47,8 @@ class PostImage extends HTMLElement {
 		};
 		return Object.keys(attrs);
 	}
+
+	//attributeChangedCallback se ejecuta cuando cambia algún atributo observado (arriba)
 
 	attributeChangedCallback(propName: Attribute, oldValue: string | undefined, newValue: string | undefined) {
 		switch (propName) {

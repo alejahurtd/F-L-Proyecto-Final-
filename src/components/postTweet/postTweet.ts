@@ -11,6 +11,7 @@ class PostTweet extends HTMLElement {
 	description?: string;
 	username?: string;
 
+	// recordar el modo open  del componente, si este el componente no se encapsula (no funciona)
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });

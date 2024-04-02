@@ -4,6 +4,8 @@ import notificationMenuIcon from '../../assets/icon-notifications-menu.png';
 import homeMenuIcon from '../../assets/icon-home-menu.png';
 import profileMenuIcon from '../../assets/icon-profile-menu.png';
 
+//Este componente estático. No nos vamos a guiar de la estructura de los principales
+
 class MenuPhoneBar extends HTMLElement {
 	constructor() {
 		super();
